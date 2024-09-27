@@ -4,7 +4,7 @@
 </h2>
 <ul>
     <li>
-        Gain experience with creating webpages
+        Gain experience with HTML
     </li>
     <li>
         Learn interesting tips and tricks that will help when dealing with web pages
