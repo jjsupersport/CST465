@@ -5,5 +5,5 @@
 - Create my own web page
 ## Favorite Programming Languages
 1. C++
-2. C
-3. Python
+1. C
+1. Python
