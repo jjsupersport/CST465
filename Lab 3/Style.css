@@ -12,7 +12,7 @@ h1 {
 .container {
     max-width: 1000px;
     background-color: white;
-    margin-left: 55px;
+    margin: 0 auto;
     margin-top: -20px
 }
 
@@ -51,7 +51,8 @@ header #headerText {
     background-color: #ffd24f; /* Yellow background for the nav */
 }
 
-#mainMenu ul li {
+#mainMenu ul li 
+{
     margin-right: 0px;
 }
 
@@ -62,6 +63,8 @@ header #headerText {
     padding: 15px;
     display: block;
     text-indent: 125px;
+    align-items: center;
+    justify-content: space-between;
 }
 #sideMenu ul {
     list-style-type: none;
