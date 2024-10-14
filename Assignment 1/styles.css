@@ -1,0 +1,206 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #003767;
+    color: #000;
+    margin: -10px auto;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: right;
+    justify-content: space-between;
+}
+
+#logo {
+    float: left;
+    width: 250px; /* Set the size for the logo */
+    height: 150px;
+    margin-left: -35px;
+    margin-top: 4px;
+    margin: auto;
+}
+
+h1 {
+    float: left;
+    margin-left: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+legend{
+    margin-left: -35px;
+    font-size: 30px;
+    font-weight: bold;
+}
+main {
+    background-color: #fff;
+    padding: 50px;
+    margin: auto;
+    margin-top: px;
+    margin-right: 4px;
+    width: 985px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-gap: 10px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-left: -30px
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+
+    width: auto;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+}
+
+#student-id
+{
+    margin-right: 300px;
+}
+#name
+{
+    margin-right: 150px;
+}
+#email{
+    margin-right: 150px;
+}
+#hobby{
+    margin-right: 150px;
+}
+#user-type{
+    margin-right: 280px;
+}
+#band{
+    margin-right: 150px;
+}
+#course-prefix{
+    margin-right: 125px;
+}
+#course-number{
+    margin-right: 125px;
+}
+#course-description{
+    margin-right: 100px;
+}
+.text1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.text2{
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+.bigtext
+{
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+button{
+    padding: 10px;
+    margin-right: 125px;
+}
+button:hover {
+    background-color: #e6b642;
+}
+
+footer {
+    color: #fff;
+    margin-top: -15px
+}
+
+/* Specific sizes and adjustments */
+input#student-id,
+input#course-prefix,
+input#course-number {
+    max-width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Navigation Menu */
+#menu ul {
+    margin: 0 auto;
+    margin-top: 4px;
+    padding: 45px;
+    display: flex;
+    background-color: #ffd24f; /* Yellow background for the nav */
+}
+#menu ul li a {
+    color: #000000;
+    font-size: 50px;
+    display: block;
+    justify-content: space-between;
+    width: 725px;
+    font-weight: bold;
+
+}
+
+/* Navigation Menu */
+#menu2 ul {
+    background-color: #cdcdcd;
+    margin: auto;
+    width: 1500px;
+    display:flex;
+    height: 50px;
+}
+
+#menu2 ul li 
+{
+    margin-top: 10px;
+    margin-right: -450px;
+    text-indent: 30px;
+}
+
+#menu2 ul li a {
+    color: #000000;
+    font-size: 25px;
+    display: block;
+    width: 725px;
+    font-weight: bold;
+
+}
+
+.container2 {
+    max-width: 1085px;
+    margin: 0 auto;
+}
+
+.container3 {
+    max-width: 1085px;
+    margin: 0 auto;
+}

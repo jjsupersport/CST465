@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container2">
+            <header>
+                <img src="CSET_OWL.jpg" alt="Oregon Tech" id="logo" />
+            </header>
+            <nav id="menu" >
+                    <ul class="group">
+                        <li><a href="Lab1.html">Assignment 1</a></li>
+                    </ul>
+                </nav>
+            </div>
+    </header>
+    <div class = "container3">
+        <nav id="menu2" >
+            <ul class="group">
+                <li><a href="Lab1.html">Oregon Tech</a></li>
+                <li><a href="Lab1.html">CSET</a></li>
+            </ul>
+        </nav>
+    <main>
+        <legend>About You</legend>
+        <form action="https://otapp-cstwebdev.azurewebsites.net/" method="POST">
+                <div class = "text1">
+                    <label for="student-id">Student ID</label>
+                    <input type="text" id="student-id" name="StudentID" placeholder="918..." maxlength="9" required>
+                </div>
+
+                <div class = "text2">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="Name" required>
+                </div>
+
+                <div class = "text1">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="EmailAddress" required>
+                </div>
+
+                <div class = "text2">
+                <label for="hobby">Hobby</label>
+                <input type="text" id="hobby" name="Hobby">
+                </div>
+
+                <div class = "text1">
+                    <label for="user-type">User Type</label>
+                    <select id="user-type" name="UserType">
+                        <option value="student">Student</option>
+                        <option value="faculty">Faculty</option>
+                    </select>
+                </div>
+
+                <div class = "text2">
+                <label for="band">Band</label>
+                <input type="text" id="band" name="Band">
+                </div>
+
+                <div class = "bigtext">
+                <label for="bio">Biography</label>
+                <textarea id="bio" name="Biography"></textarea>
+                </div>
+
+                <div>
+                <label for="course-prefix">Course Prefix</label>
+                <input type="text" id="course-prefix" name="CoursePrefix" maxlength="4" required>
+                </div>
+                <div>
+                <label for="course-number">Course Number</label>
+                <input type="text" id="course-number" name="CourseNumber" maxlength="3" required>
+                </div>
+                <div class = "text2">
+                <label for="course-description">Course Description</label>
+                <input type="text" id="course-description" name="CourseDescription" required>
+                </div>
+                <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© CSET, All Rights Reserved</p>
+    </footer>
+</div>
+</body>
+</html>
