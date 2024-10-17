@@ -1,4 +1,5 @@
-@model List<Lab4.Objects.ChoreLaborer>
+@model Lab4.Objects.ChoreWorkforce
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,9 +8,9 @@
     <body>
         <h1>Chore Laborers</h1>
         <ul>
-        @foreach(var laborer in Model)
+        @foreach(var laborer in Model.Laborers)
         {
-            <li>@(laborer?.Name ?? "Unknown") is @(laborer?.Age.ToString() ?? "-1") years old and ranks a @(laborer?.Difficulty.ToString() ?? "N/A") on the difficulty scale</li>
+            <li>@laborer.Name is @laborer.Age years old and ranks a @laborer.Difficulty on the difficulty scale</li>
         } 
         </ul>
     </body>
