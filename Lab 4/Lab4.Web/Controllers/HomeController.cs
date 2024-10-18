@@ -22,8 +22,8 @@ public class HomeController : Controller
         myWorkforce.Laborers.Add(new ChoreLaborer() { Name = "Dee", Age = 9, Difficulty = 3 });
         myWorkforce.AddRandomLaborers(30);
         var filteredlaborers = myWorkforce.Laborers
-        .Where(laborer => laborer?.Age >= 3 && laborer?.Age <= 10 && laborer?.Difficulty <= 7)
-        .OrderBy(laborer => laborer?.Name)
+        .Where(laborer => (laborer?.Age ?? -1) >= 3 && (laborer?.Age ?? -1) <= 10 && (laborer?.Difficulty ?? -1) <= 7)
+        .OrderBy(laborer => laborer?.Name ?? "")
         .ToList();
 
         var filteredworkforce = new ChoreWorkforce();
