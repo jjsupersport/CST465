@@ -1,0 +1,11 @@
+@model MyProject.Models.ContactModel
+@{
+    ViewData["Title"] = ViewBag.Title;
+    Layout = "_Layout"; // Specify the layout
+}
+
+<h2>Contact Form Submission</h2>
+
+<p><strong>Name:</strong> @Model.Name</p>
+<p><strong>Email:</strong> @Model.Email</p>
+<p><strong>Message:</strong> @Model.Message</p>
