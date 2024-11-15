@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Lab8.DataObjects.ImageObject>
+
+<div class="row">
+    @foreach (var image in Model)
+    {
+        <div class="col-md-3">
+            <img src="@Url.Action("GetImage", new { id = image.ID })" class="img-fluid" alt="@image.Description" />
+            <p>@image.Description</p>
+        </div>
+    }
+</div>
