@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data;
 using Assignment3;
 using Microsoft.Extensions.Configuration;
 using Assignment3Namespace.DataModels;
@@ -30,11 +31,11 @@ namespace Assignment3Namespace.Repositories
                         {
                             posts.Add(new BlogPost
                             {
-                                ID = reader.GetInt32(0),
-                                Author = reader.GetString(1),
-                                Title = reader.GetString(2),
-                                Content = reader.GetString(3),
-                                Timestamp = reader.GetDateTime(4)
+                                ID = (int)reader["ID"],
+                                Author = reader["Author"].ToString(),
+                                Title = reader["Title"].ToString(),
+                                Content = reader["Content"].ToString(),
+                                Timestamp = DateTime.Parse(reader["Timestamp"].ToString())
                             });
                         }
                     }
@@ -48,11 +49,12 @@ namespace Assignment3Namespace.Repositories
             using (var connection = new SqlConnection(_Config["ConnectionStrings:DB_BlogPosts"]))
             {
                 connection.Open();
-                var command = new SqlCommand("INSERT INTO BlogPosts (Author, Title, Content, Timestamp) VALUES (@Author, @Title, @Content, @Timestamp)", connection);
+                var command = new SqlCommand("BlogPost_InsertUpdate", connection);
+                command.CommandType = CommandType.StoredProcedure;
+                if(post.ID != 0) { command.Parameters.AddWithValue("@ID", post.ID); }
                 command.Parameters.AddWithValue("@Author", post.Author);
                 command.Parameters.AddWithValue("@Title", post.Title);
                 command.Parameters.AddWithValue("@Content", post.Content);
-                command.Parameters.AddWithValue("@Timestamp", post.Timestamp);
                 command.ExecuteNonQuery();
             }
         }
@@ -72,11 +74,11 @@ namespace Assignment3Namespace.Repositories
                     {
                         post = new BlogPost
                         {
-                            ID = reader.GetInt32(0),
-                            Author = reader.GetString(1),
-                            Title = reader.GetString(2),
-                            Content = reader.GetString(3),
-                            Timestamp = reader.GetDateTime(4)
+                            ID = (int)reader["ID"],
+                            Author = reader["Author"].ToString(),
+                            Title = reader["Title"].ToString(),
+                            Content = reader["Content"].ToString(),
+                            Timestamp = DateTime.Parse(reader["Timestamp"].ToString())                  
                         };
                     }
                 }

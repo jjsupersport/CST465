@@ -27,11 +27,13 @@ namespace Assignment3Namespace.Controllers
         }
 
         [Route("Add")]
+        [HttpGet]
         public IActionResult Add()
         {
             return View(new BlogPostModel());
         }
 
+        [Route("Add")]
         [HttpPost]
         public IActionResult Add(BlogPostModel model)
         {
@@ -50,7 +52,8 @@ namespace Assignment3Namespace.Controllers
             return View(model);
         }
 
-        [Route("Edit")]
+        [Route("Edit/{id}")]
+        [HttpGet]
         public IActionResult Edit(int id)
         {
             var post = _repository.GetById(id);
@@ -66,6 +69,7 @@ namespace Assignment3Namespace.Controllers
             return View(model);
         }
 
+        [Route("Edit/{ID}")]
         [HttpPost]
         public IActionResult Edit(BlogPostModel model)
         {
