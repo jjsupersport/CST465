@@ -1,0 +1,7 @@
+@model TrueFalseQuestionModel
+<h2>@Model.Question</h2>
+<select asp-for="Answer" class="form-control">
+    <option value="True">True</option>
+    <option value="False">False</option>
+</select>
+<span asp-validation-for="Answer" class="text-danger"></span>

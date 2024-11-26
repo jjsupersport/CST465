@@ -1,0 +1,9 @@
+@model MultipleChoiceQuestionModel
+<h2>@Model.Question</h2>
+@foreach (var choice in Model.Choices)
+{
+    <div>
+        <input type="radio" asp-for="Answer" value="@choice" /> @choice
+    </div>
+}
+<span asp-validation-for="Answer" class="text-danger"></span>

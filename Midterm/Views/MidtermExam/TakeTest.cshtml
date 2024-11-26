@@ -1,0 +1,47 @@
+@using Midterm
+@model List<TestQuestionModel>
+    @Html.ValidationSummary()
+@*TODO: Form needs to use tag helpers to post to the "TakeTest" action *@
+<form asp-action="TakeTest" method="post">
+@for (int i = 0; i < Model.Count; i++)
+{
+    <input type="Hidden" asp-for ="@Model[i].ID">
+    if (Model[i] is TrueFalseQuestionModel)
+    {
+        <h2>@Model[i].Question</h2>
+        <select asp-for="@Model[i].Answer" class="form-select">
+            <option value="">--Select--</option>
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select>
+        <span asp-validation-for="@Model[i].Answer"></span>
+    }
+    @*TODO: Add rending of other question types here.*@
+    else if (Model[i] is ShortAnswerQuestionModel)
+        {
+            <h2>@Model[i].Question</h2>
+            <input asp-for="@Model[i].Answer" class="form-control" maxlength="100" />
+            <span asp-validation-for="@Model[i].Answer" class="text-danger"></span>
+        }
+        else if (Model[i] is LongAnswerQuestionModel)
+        {
+            <h2>@Model[i].Question</h2>
+            <textarea asp-for="@Model[i].Answer" class="form-control"></textarea>
+            <span asp-validation-for="@Model[i].Answer" class="text-danger"></span>
+        }
+        else if (Model[i] is MultipleChoiceQuestionModel multipleChoiceQuestion)
+        {
+            <h2>@Model[i].Question</h2>
+            @foreach (var choice in multipleChoiceQuestion.Choices)
+            {
+                <div>
+                    <input type="radio" asp-for="@Model[i].Answer" value="@choice" />
+                    @choice
+                </div>
+            }
+            <span asp-validation-for="@Model[i].Answer" class="text-danger"></span>
+        }
+    
+}
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
